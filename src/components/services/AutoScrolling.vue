@@ -1,5 +1,5 @@
 <template>
-    <div class="py-5 text-white" :style="{ backgroundColor: brandColorOne }">
+    <div class="py-5 text-white" style="background-color: var(--bg-primary)">
         <h3 class="text-center mb-5 text-capitalize ">we rely on the best to provide the finest service and experience
         </h3>
         <article :class="['wrapper', { 'wrapper--vertical': isVertical }]">

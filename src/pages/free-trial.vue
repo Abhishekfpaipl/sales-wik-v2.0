@@ -1,48 +1,20 @@
 <template>
     <div>
-        <div class="container py-5">
+        <div class="container py-4">
             <div class="row">
-                <div class="col-12 col-md-6 d-flex flex-column justify-content-center align-items-center text-center">
+                <div class="col-12 col-md-6 py-3 text-center px-4 px-md-2">
                     <h1 class="lh-1">Start your free trial.</h1>
-                    <p class="text-capitalize">No credit card required, no software to install</p>
-                    <img src="/img/free-trial.svg" class="" style="width:250px; object-fit: contain;" alt="">
-                    <p class="text-start mt-4">With your 30 days trial you get</p>
-                    <div class="d-flex gap-2 justify-content-center align-items-center" v-for="(link, index) in links"
-                        :key="index">
-                        <i class="bi bi-check text-success fs-4"></i>
-                        <p class="my-1">{{ link }}</p>
-                    </div>
-                </div>
-                <div class="col-12 col-md-6 border bg-light p-3 mt-5 mt-md-0">
-                    <p class="my-1 fw-bold">Sign up now to start your free sales trial.</p>
-                    <form @submit.prevent="submitQuery()" class="mt-3 row g-3 needs-validation" novalidate>
-                        <div class="w-100 form-floating mb-1">
+                    <p class="text-capitalize">No credit card required, no software to install</p> 
+                    <form @submit.prevent="submitQuery()" class="mt-4 row g-3 needs-validation" novalidate>
+                        <div class="w-100 form-floating mt-0">
                             <input type="text" class="form-control" placeholder="" v-model="name" required>
                             <label for="floatingInput" class="text-muted ms-2">Name</label>
                         </div>
-                        <div class="w-50 form-floating mb-1">
-                            <input type="email" class="form-control" placeholder="Email" v-model="email" required>
-                            <label class="ms-2 text-muted">Email</label>
-                        </div>
-                        <div class="w-50 form-floating mb-1">
+                        <div class="w-50 form-floating mt-2">
                             <input type="tel" class="form-control" placeholder="Mobile" v-model="number" required>
                             <label class="ms-2 text-muted">Mobile No</label>
                         </div>
-                        <div class="mb-1">
-                            <select v-model="selectedJob" class="form-select py-3">
-                                <option value="" class="text-muted">Job Title</option>
-                                <option v-for="job in jobs" :key="job" :value="job">{{ job
-                                    }}</option>
-                            </select>
-                        </div>
-                        <div class="mb-1 w-50">
-                            <select v-model="selectedEmployee" class="form-select py-3">
-                                <option value="" class="text-muted">Employees</option>
-                                <option v-for="employee in employees" :key="employee" :value="employee">{{ employee }}
-                                </option>
-                            </select>
-                        </div>
-                        <div class="mb-1 w-50">
+                        <div class="mt-2 w-50">
                             <select class="form-select py-3" name="CompanyCountry" v-model="selectedCountry"
                                 aria-required="true" required="true">
                                 <option disabled label="Country/Region" class="text-muted" selected value="">
@@ -52,27 +24,40 @@
                                 </option>
                             </select>
                         </div>
-                        <div class="form-check">
+                        <div class="w-100 form-floating mt-2">
+                            <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea"
+                                v-model="note"></textarea>
+                            <label for="floatingTextarea" class="ms-2 text-muted">Describe your requirements</label>
+                        </div>
+
+                        <div class="form-check text-start ms-2">
                             <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"
                                 v-model="agree">
-                            <label class="form-check-label" for="flexCheckDefault">
-                                I agree to the <router-link to="/agreement" class="text-decoration-none">Main Services
-                                    Agreement.</router-link>
+                            <label class="form-check-label small" for="flexCheckDefault">
+                                I agree to the <router-link to="/agreement" class="text-dark text-capitalize">terms and
+                                    conditions</router-link> and
+                                <router-link to="/privacy-policy" class="text-dark text-capitalize">privacy
+                                    policy.</router-link>
                             </label>
                         </div>
-                        <small class="d-inline-block">By registering, you confirm that you agree to the storing and
-                            processing of your
-                            personal data by Salesforce as described in the <router-link to="/privacy-policy"
-                                class="text-decoration-none">
-                                Privacy Statement. </router-link></small>
                         <div class="col-12">
-                            <button class="btn btn-danger py-2 fs-5 w-100 rounded-0 text-white"
-                                type="submit">Start my free trial</button>
+                            <button class="btn btn-danger py-2 fs-5 w-100 rounded-0 text-white" type="submit">Start my
+                                free trial</button>
                         </div>
                     </form>
+
+                </div>
+                <div class="col-12 col-md-6 p-3"> 
+                    <img src="/img/free-trial.svg" class="" style="width:250px; object-fit: contain;" alt="">
+                    <p class="text-center mt-4">With your 30 days trial you get</p>
+                    <div class="d-flex gap-2 justify-content-center align-items-center" v-for="(link, index) in links"
+                        :key="index">
+                        <i class="bi bi-check text-success fs-4"></i>
+                        <p class="my-1">{{ link }}</p>
+                    </div>
                 </div>
             </div>
-        </div> 
+        </div>
         <p class="text-center py-4 text-white mb-0" style="background-color: var(--bg-primary);">Questions? Talk to an
             expert: 886002001</p>
     </div>
@@ -87,25 +72,25 @@ export default {
                 "Guided experiences for sales persons.",
                 "Online training and live webinars"
             ],
-            jobs: [
-                "Sales Manager",
-                "Marketing / PR Manager",
-                "Customer Service Manager",
-                "CXO / VR / General Manager",
-                "IT Manager",
-                "Operations Manager",
-                "Developer Software Engineer",
-                "Student / Job Seeker / Personal Interest",
-                "Others"
-            ],
-            employees: [
-                "1-25 employees",
-                "26-100 employees",
-                "101-200 employees",
-                "201-500 employees",
-                "501-2000 employees",
-                "2001+ employees",
-            ],
+            // jobs: [
+            //     "Sales Manager",
+            //     "Marketing / PR Manager",
+            //     "Customer Service Manager",
+            //     "CXO / VR / General Manager",
+            //     "IT Manager",
+            //     "Operations Manager",
+            //     "Developer Software Engineer",
+            //     "Student / Job Seeker / Personal Interest",
+            //     "Others"
+            // ],
+            // employees: [
+            //     "1-25 employees",
+            //     "26-100 employees",
+            //     "101-200 employees",
+            //     "201-500 employees",
+            //     "501-2000 employees",
+            //     "2001+ employees",
+            // ],
             countries: [
                 { value: "US", label: "United States" },
                 { value: "AF", label: "Afghanistan" },

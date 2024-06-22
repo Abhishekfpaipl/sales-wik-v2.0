@@ -1,70 +1,109 @@
 <template>
-    <div class="text-dark bg-light pt-3 border-top border-bottom">
-
-        <div class="d-md-flex flex-column-sm justify-content-evenly py-4 px-3  ">
-            <div class="mb-3">
+    <div class="container-fluid text-dark bg-light pt-3 border-top border-bottom">
+        <div class="row">
+            <div class="col-12 col-md-4 mb-3">
                 <router-link to="/">
                     <img :src="img" style="width: 100px;object-fit: contain;">
                 </router-link>
                 <p class="mb-0 fw-bold fs-2 text-uppercase" style="color: var(--bg-primary)">saleswik</p>
-                <p class="mb-2 text-capitalize" style="color: var(--bg-primary);">Empowering Sales, <br> Simplifying Success
-                </p>
+                <p class="mb-2 text-capitalize" style="color: var(--bg-primary);">let's get wicked</p>
+
             </div>
-            <div class="mb-3 text-start">
+
+            <div class=" col-12 col-md-4 mb-3 text-center">
                 <p class="mb-2 fw-bold">Contact Us</p>
                 <p class="mb-2">Email : support@saleswik.com</p>
                 <p class="mb-2">Mob no. : 91 8860012001</p>
                 <p class="mb-2">Address : 2nd Floor, Block B1/632, <br> Janakpuri, 110058, Delhi, India</p>
+                <div class="d-flex gap-2 justify-content-center">
+                    <p class="fw-bold">Follow Us :</p>
+                    <i class="bi bi-twitter-x"></i>
+                    <i class="bi bi-facebook"></i>
+                    <i class="bi bi-linkedin"></i>
+                    <i class="bi bi-youtube"></i>
+                    <i class="bi bi-instagram"></i>
+                </div>
             </div>
-            <div class="mb-3 text-start">
-                <p class="mb-2 fw-bold">Reach Us</p>
-                <a href="https://www.instagram.com/" class="text-decoration-none text-dark">
-                    <p class="mb-2">Instagram</p>
-                </a>
-                <a href="https://in.linkedin.com/" class="text-decoration-none text-dark">
-                    <p class="mb-2">Linkdin</p>
-                </a>
-                <a href="https://www.facebook.com/" class="text-decoration-none text-dark">
-                    <p class="mb-2">Facebook</p>
-                </a>
-                <a href="https://www.youtube.com/" class="text-decoration-none text-dark">
-                    <p class="mb-2">Youtube</p>
-                </a>
-            </div>
-            <div class="mb-3 text-start">
-                <p class="mb-2 fw-bold">Resources</p>
-                <router-link to="/legal-warning" class="text-dark" style="text-decoration: none;">
-                    <p class="mb-2">Legal Warning</p>
-                </router-link>
-                <router-link to="/privacy-policy" class="text-dark" style="text-decoration: none;">
-                    <p class="mb-2">Privacy Policy</p>
-                </router-link>
-                <router-link to="/term-of-use" class="text-dark" style="text-decoration: none;">
-                    <p class="mb-2">Terms Of Use</p>
-                </router-link>
-                <router-link to="/career" class="text-dark" style="text-decoration: none;">
-                    <p class="mb-2">Career</p>
-                </router-link>
-                <router-link to="/business" class="text-dark" style="text-decoration: none;">
-                    <p class="mb-2">Business</p>
-                </router-link>
-                <router-link to="/reseller-program" class="text-dark" style="text-decoration: none;">
-                    <p class="mb-2">Resellership</p>
-                </router-link>
+            <div class="col-12 col-md-4 d-flex justify-content-around">
+                <div class="mb-3 text-start">
+                    <p class="mb-2 fw-bold">Company</p>
+                    <div class="d-flex flex-column">
+                        <router-link :to="link.link" class="text-decoration-none my-1 text-dark"
+                            v-for="(link, index) in company" :key="index">{{ link.name }}</router-link>
+                    </div>
+                </div>
+                <div class="mb-3 text-start">
+                    <p class="mb-2 fw-bold">Resources</p>
+                    <div class="d-flex flex-column">
+                        <router-link :to="link.link" class="text-decoration-none my-1 text-dark"
+                            v-for="(link, index) in links" :key="index">{{ link.name }}</router-link>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
+    <FameFoot />
     <div class="bg-light text-center py-3 d-flex align-items-center justify-content-center">
-        <p class="text-dark mb-0"> Copyright © 2024 sovisor.in All rights reserved</p>
+        <p class="text-dark mb-0"> Copyright © 2024 saleswik.com All rights reserved</p>
     </div>
 </template>
 
-<script> 
+<script>
+import FameFoot from '@/components/services/FameFoot.vue'
 export default {
     name: 'FooterBar',
+    components: {
+        FameFoot,
+    },
     data() {
         return {
             img: '/img/logo.svg',
+            company: [
+                {
+                    id: 4,
+                    name: 'Contact Us',
+                    link: '/contact-us'
+                },
+                {
+                    id: 42,
+                    name: 'About Us',
+                    link: '/about-us'
+                },
+                {
+                    id: 3,
+                    name: 'Resellership',
+                    link: '/reseller-program'
+                },
+                {
+                    id: 9,
+                    name: 'Career',
+                    link: '/career'
+                },
+            ],
+            links: [
+                {
+                    id: 13,
+                    name: 'LegalWarning',
+                    link: '/legal-warning'
+                },
+                {
+                    id: 1,
+                    name: 'Privacy Policy',
+                    link: '/privacy-policy'
+                },
+                {
+                    id: 1,
+                    name: 'Terms Of Use',
+                    link: '/terms-of-use'
+                },
+
+                {
+                    id: 3,
+                    name: 'Business',
+                    link: '/business'
+                },
+
+            ],
         }
     },
 }

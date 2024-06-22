@@ -1,7 +1,7 @@
 <template>
   <div class="container py-3">
     <h1 class="px-2 text-center mb-0">About Us</h1>
-    <router-link to="/about" class="text-decoration-none text-dark d-flex justify-content-end mb-2">
+    <router-link to="/about-us" class="text-decoration-none text-dark d-flex justify-content-end mb-2">
       <span>Know More </span>
       <i class="bi bi-arrow-right"></i>
     </router-link>

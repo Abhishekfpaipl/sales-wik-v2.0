@@ -1,9 +1,7 @@
 <template>
-    <div class="py-3">
+    <div class="">
         <div class="container">
-            <div class="py-2 mb-4">
-                <h1 class="text-center text-capitalize">How it works</h1>
-            </div>
+            <h1 class="text-center text-capitalize mb-4">How it works</h1>
             <div class="d-flex flex-column m-auto align-items-center" style="max-width: 500px;">
                 <div v-for="(lead, index) in values" :key="index" class="funnel-step"
                     :style="{ width: calculateWidth(index) }">

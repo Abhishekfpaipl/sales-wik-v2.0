@@ -1,50 +1,59 @@
 <template>
-  <div class=" " style="padding-top:70px">
-    <ServicesFormBanner brandColorOne="#125252" />
-    <div class="my-3">
-      <ServicesLeadManagement :values="leads" title="Features, that boost your attention!" />
+  <div class="" style="padding-top:70px">
+    <Banner brandColorOne="#125252" v-observe />
+    <div class="my-5">
+      <ServicesLeadManagement :values="leads" title="Features, that boost your attention!" v-observe />
     </div>
-    <div class="my-3">
-      <BookDemo :faqs="faqs" image-src="/img/demo.svg" title="Book a free demo" />
+    <div class="my-5">
+      <OurService v-observe />
     </div>
-    <div class="my-3">
-      <PriceSection />
+    <div class="my-5">
+      <AutoScrolling v-observe />
     </div>
-    <div class="my-3">
-      <StepsForRegistration />
+    <div class="my-5">
+      <PriceSection v-observe />
     </div>
-    <div class="my-3">
-      <SalesDemoPreview />
+    <div class="my-5">
+      <StepsForRegistration v-observe />
+    </div>
+    <div class="my-5">
+      <SalesDemoPreview v-observe />
+    </div>
+    <div class="my-5">
+      <ImageSection banner="/img/banner1.png" v-observe />
+    </div>
+    <div class="my-5">
+      <SalesFunnel v-observe />
+    </div>
+    <div class="my-5">
+      <CustomCounter brandColorOne="#125252" brandTextColor="#78E6B7" name1="customers" :value1="50" name2="years"
+        :value2="10" name3="team" :value3="150" v-observe />
+    </div>
+    <div class="my-5">
+      <WhyChooseUs :description="whychooseUs" title="why choose us" image="/img/whychooseUs.svg" v-observe />
+    </div>
+    <div class="my-5">
+      <Comparison v-observe />
+    </div>
+    <div class="my-5">
+      <TempFaqs :faqs="faqs" image-src="/img/faq.svg" title="Frequently asked questions" image-position="left"
+        v-observe />
+    </div>
+    <div class="my-5">
+      <TempCustomers :reviews="customers" title="our customers" v-observe />
     </div>
     <div class="">
-      <ImageSection banner="/img/banner1.png" brandColorOne="#125252" />
-    </div>
-    <div class="my-3">
-      <SalesFunnel />
-    </div>
-    <div class="my-3">
-      <CustomCounter brandColorOne="#125252" brandTextColor="#78E6B7" name1="customers" :value1="50" name2="years"
-        :value2="10" name3="team" :value3="150" />
-    </div>
-    <div class="my-3">
-      <WhyChooseUs :description="whychooseUs" title="why choose us" image="/img/whychooseUs.svg" />
-    </div>
-    <div class="my-3">
-      <Comparison />
-    </div>
-    <div class="my-3">
-      <TempFaqs :faqs="faqs" image-src="/img/faq.svg" title="Frequently asked questions" image-position="left" />
-    </div>
-    <div class="my-3">
-      <TempCustomers :reviews="customers" title="our customers" />
+      <BookDemo :faqs="faqs" image-src="/img/demo.svg" title="Book a free demo" v-observe />
     </div>
     <BottomShareIcons />
   </div>
 </template>
 
-<script> 
+<script>
+import Banner from "@/components/BannerSection.vue";
 import ServicesLeadManagement from "@/components/services/LeadManagement.vue";
-import ServicesFormBanner from "@/components/services/FormBanner.vue";
+import OurService from "@/components/OurService.vue";
+import AutoScrolling from "@/components/services/AutoScrolling.vue";
 import BookDemo from "@/components/BookDemo.vue";
 import PriceSection from "@/components/PriceSection.vue";
 import StepsForRegistration from "@/components/StepsForRegistration.vue";
@@ -56,11 +65,13 @@ import WhyChooseUs from "@/components/WhyChooseUs.vue";
 import Comparison from "@/components/ComparisonSection.vue";
 import TempFaqs from "@/components/TempFaqs.vue";
 import TempCustomers from "@/components/TempCustomers.vue";
-import BottomShareIcons from "@/components/BottomShareIcons.vue"; 
+import BottomShareIcons from "@/components/BottomShareIcons.vue";
 export default {
-  components:{
+  components: {
+    Banner,
     ServicesLeadManagement,
-    ServicesFormBanner,
+    OurService,
+    AutoScrolling,
     BookDemo,
     PriceSection,
     StepsForRegistration,
@@ -75,7 +86,7 @@ export default {
     BottomShareIcons,
   },
   data() {
-    return { 
+    return {
       faqs: [
         {
           id: 1,
@@ -177,7 +188,7 @@ export default {
           icon: 'bi-diagram-3 fs-4',
           title: "Lead distribution",
           description: "Easily track and distribute leads between your teams based on requirements or other dynamic criteria.",
-        }, 
+        },
         {
           id: 4,
           icon: 'bi-megaphone fs-4',

@@ -1,6 +1,6 @@
 <template>
     <div class="">
-        <div class="container py-4">
+        <div class="container">
             <h3 class="text-center text-capitalize">Goodbye guesswork, hello sales efficiency</h3>
             <p class="text-center text-capitalize mb-4">Transform sales across all channels. Never miss a sales opportunity.</p>
             <div class="row row-cols-1 row-cols-md-2 g-2">

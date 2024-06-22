@@ -1,15 +1,15 @@
 <template>
     <div style="padding-top: 70px;">
-        <div class="text-center fw-bold py-5 text-white" style="background-color: var(--bg-primary)">
+        <div class="text-center fw-bold py-5 text-white" style="background-color: var(--bg-primary)" v-observe>
             <p class="fs-1">About Us</p> 
         </div>
         <div class="container py-5 rounded-top-5 bg-white" style="margin-top: -40px;">
-            <OurTeam :values="links" /> 
+            <OurTeam :values="links" v-observe/> 
             <div class="my-3">
-                <InfoSection :customFields="customFields" />
+                <InfoSection :customFields="customFields" v-observe/>
             </div>
             <div class="my-3">
-                <GroupsSection />
+                <GroupsSection v-observe/>
             </div>
         </div>
 

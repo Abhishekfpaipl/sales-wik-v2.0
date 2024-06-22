@@ -7,38 +7,19 @@
                     <img :src="brandLogo" alt="Brand Logo" style="height: 50px; object-fit: contain;">
                     <div class="d-flex flex-column align-items-end ms-2" style="color: var(--bg-primary)">
                         <span v-if="brandName" class="text-uppercase fs-4 fw-bold lh-1">{{ brandName }}</span>
-                        <small class="smaller">{{ brandTagLine }}</small>
+                        <!-- <small class="smaller">{{ brandTagLine }}</small> -->
                     </div>
                 </router-link>
             </div>
         </div>
-        <div class="flex-fill d-none d-md-flex gap-3 justify-content-end me-3">
+        <!-- <div class="flex-fill d-none d-md-flex gap-3 justify-content-end me-3">
             <router-link :to="link.link" class="text-decoration-none text-dark" v-for="(link, index) in brandLinks"
                 :key="index">{{ link.name }}</router-link>
-        </div>
+        </div>  -->
         <router-link to="/free-trial"
-            class="text-decoration-none text-dark d-none d-md-flex justify-content-center align-items-center rounded p-2 border px-2 ms-2">
-            <span class="ms-2">Try for free</span>
+            class="text-decoration-none btn btn-danger rounded p-2 border px-2 ms-2">
+            <span class="text-capitalize">Try free</span>
         </router-link>
-
-        <i class="bi bi-list border rounded p-1 px-2 fs-5 d-md-none" data-bs-toggle="offcanvas"
-            data-bs-target="#offcanvasExample" aria-controls="offcanvasExample"></i>
-
-        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasExample"
-            aria-labelledby="offcanvasExampleLabel">
-            <div class="offcanvas-header border-bottom">
-                <h5 class="offcanvas-title" id="offcanvasExampleLabel">Menu</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-            </div>
-            <div class="offcanvas-body p-0">
-                <ul class="list-group list-group-flush">
-                    <!-- v-for="(link, index) in brandLinks" :key="index" @click.native="closeOffcanvas">{{ link.name }} -->
-                    <router-link :to="link.link" class="list-group-item border-bottom"
-                        v-for="(link, index) in brandLinks" :key="index" @click="closeOffcanvas">{{ link.name }}
-                    </router-link>
-                </ul>
-            </div>
-        </div>
     </div>
 </template>
 
@@ -49,28 +30,6 @@ export default {
         return {
             brandName: 'saleswik',
             brandTagLine: "let's get wicked",
-            brandLinks: [
-                {
-                    id: 1,
-                    name: 'Home',
-                    link: '/'
-                },
-                {
-                    id: 4,
-                    name: 'Contact',
-                    link: '/contact-us'
-                },
-                {
-                    id: 9,
-                    name: 'Careers',
-                    link: '/career'
-                },
-                {
-                    id: 3,
-                    name: 'About',
-                    link: '/about-us'
-                },
-            ],
             brandLogo: '/img/logo.svg',
             brandColorOne: '#125252',
         }
@@ -78,7 +37,7 @@ export default {
     methods: {
         closeOffcanvas() {
             const offcanvasElement = document.getElementById('offcanvasExample');
-            const bsOffcanvas = new window.bootstrap.Offcanvas.getInstance(offcanvasElement);
+            const bsOffcanvas = window.bootstrap.Offcanvas.getInstance(offcanvasElement);
             if (bsOffcanvas) {
                 bsOffcanvas.hide();
             }

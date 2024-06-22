@@ -1,5 +1,5 @@
 <template> 
-      <div class="container py-4">
+      <div class="container">
         <h1 class="text-capitalize text-center">{{title}}</h1>
         <div class="w-100 d-block">
           <div class="w-100 overflow-auto d-flex align-items-center hide-scroll" ref="slider">

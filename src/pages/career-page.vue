@@ -1,49 +1,58 @@
 <template>
     <div style="padding-top: 70px;">
-        <div class="text-center fw-bold py-5 text-white" style="background-color: var(--bg-primary);">
+        <div class="text-center fw-bold py-5 text-white" style="background-color: var(--bg-primary);" v-observe>
             <p class="fs-1 mb-0">Career</p>
             <p class="fs-5">LOOKING FOR A CAREER, JOIN US !</p>
         </div>
-        <div class="container py-5 rounded-top-5 bg-white" style="margin-top: -40px;">
+        <div class="container py-5 rounded-top-5 bg-white" style="margin-top: -40px;" v-observe>
             <div class="row">
-                <div class="col-12 col-md-6 text-center">
-                    <form @submit.prevent="loginAccount()">
-                        <div class="p-2 form-floating">
+                <div class="col-12 col-md-6 d-flex justify-content-center align-items-center">
+                    <img src="/img/career-benefit.svg" style="width: 500px; max-width: 80%" alt="">
+                </div>
+                <div class="col-12 col-md-6 text-center mt-4 mt-md-0">
+                    <form @submit.prevent="submitQuery()">
+                        <div class="mt-2 form-floating">
                             <input type="text" class="form-control" placeholder="First Name" v-model="name">
                             <label for="floatingInput" class="ms-2 text-muted">Your name</label>
                         </div>
-                        <div class="p-2 form-floating">
+                        <div class="mt-2 form-floating">
                             <input type="text" class="form-control" placeholder="Business Name" v-model="designation">
                             <label for="floatingInput" class="ms-2 text-muted">Designation</label>
                         </div>
-                        <div class="p-2 form-floating">
+                        <div class="mt-2 form-floating">
                             <input type="number" class="form-control" placeholder="Phone No." v-model="number">
                             <label for="floatingInput" class="ms-2 text-muted">Phone No</label>
                         </div>
-                        <div class="p-2 form-floating">
+                        <div class="mt-2 form-floating">
                             <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea"
                                 v-model="note"></textarea>
                             <label for="floatingTextarea" class="ms-2 text-muted">Notes</label>
                         </div>
-                        <button class="btn btn-danger text-capitalize">send message</button>
+                        <ImagePdfUpload />
+                        <div class="col-12 mt-3">
+                            <button class="btn btn-warning py-2 fs-5 w-100 rounded-0 text-dark"
+                                type="submit">Submit</button>
+                        </div>
                     </form>
                 </div>
-                <div class="col-12 col-md-6">
-                    <div class="row">
-                        <div v-for="(data, index) in works" :key="index" class="col-12">
-                            <div class="d-flex align-items-center border my-2">
-                                <div class="p-3">
-                                    <i :class="data.icon"></i>
-                                </div>
-                                <span class="fw-bold">{{ data.heading }}</span>
-                            </div>
+
+            </div>
+        </div>
+        <div class="py-5" style="background-color: var(--bg-forth)">
+            <div class="container">
+                <h3 class="text-capitalize mb-4">Employee Benefits</h3>
+                <div class="row row-cols-1 row-cols-md-3 row-cols-lg-4">
+                    <div v-for="(data, index) in works" :key="index" class="col">
+                        <div class="d-flex align-items-center border my-1 ps-5 ps-md-2">
+                            <i :class="data.icon" class="fs-4 p-1"></i>
+                            <small class="fw-bold text-capitalize ms-3">{{ data.heading }}</small>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <div class="text-white py-5" style="background-color: var(--bg-primary)">
+        <div class=" container py-5" v-observe>
             <h3 class="text-center ">Our Core Values</h3>
             <p class="text-center container">
                 One thing that we've tried to keep consistent through all these years is our core set of values and
@@ -53,8 +62,6 @@
                 in
                 everything we do - from the littlest of things to the biggest of decisions.
             </p>
-        </div>
-        <div class="container my-5">
             <div class="p-2 row">
                 <div v-for="(data, index) in datas" :key="index" class="col-12 col-md-6 g-3">
                     <div class="d-flex align-items-center border p-2">
@@ -72,8 +79,12 @@
 </template>
 
 <script>
+import ImagePdfUpload from "@/components/ImagePdfUpload.vue";
 export default {
     name: 'CareerPage',
+    components: {
+        ImagePdfUpload,
+    },
     data() {
         return {
             datas: [
@@ -110,21 +121,37 @@ export default {
             ],
             works: [
                 {
-                    icon: 'bi bi-currency-rupee fs-3',
+                    icon: 'bi bi-currency-rupee',
                     heading: 'Competitive Salary'
                 },
                 {
-                    icon: 'bi bi-bounding-box fs-3',
+                    icon: 'bi bi-bounding-box',
                     heading: 'Open Office Culture'
                 },
                 {
-                    icon: 'bi bi-graph-up-arrow fs-3',
+                    icon: 'bi bi-graph-up-arrow',
                     heading: 'Fast Growing Startup'
                 },
                 {
-                    icon: 'bi bi-diagram-2 fs-3',
+                    icon: 'bi bi-people-fill',
                     heading: 'Equal Opportunities'
                 },
+                {
+                    icon: 'bi bi-emoji-smile',
+                    heading: 'Boosting Employee Morale'
+                },
+                {
+                    icon: 'bi bi-heart',
+                    heading: 'Improving Well-being'
+                },
+                {
+                    icon: 'bi bi-lightning',
+                    heading: 'Increasing Productivity'
+                },
+                {
+                    icon: 'bi bi-check2-circle',
+                    heading: 'Fulfilling Legal Requirements'
+                }
             ],
             mobile: '',
             email: '',

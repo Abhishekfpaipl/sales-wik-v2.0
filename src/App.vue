@@ -17,7 +17,7 @@ export default {
       const hiddenPages = ['DemoPage1', 'ThankYou', 'LoginPage', 'RegistrationPage', 'free-trial', 'demo-page', 'sales-demo-one', 'sales-demo-two']
       return hiddenPages.includes(this.$route.name)
     },
-  } 
+  }
 }
 </script>
 <style lang="scss">
@@ -62,5 +62,16 @@ export default {
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+.before-enter {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.enter {
+  opacity: 1;
+  transform: translateY(0);
 }
 </style>

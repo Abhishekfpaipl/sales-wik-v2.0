@@ -70,12 +70,7 @@ const routes = [
     path: "/privacy-policy",
     name: "privacy-policy",
     component:()=> import("@/pages/privacy-policy.vue")
-  },
-  {
-    path: "/promoter-page",
-    name: "promoter-page",
-    component:()=> import("@/pages/promoter-page.vue")
-  },
+  }, 
   {
     path: "/reseller-program",
     name: "reseller-program",

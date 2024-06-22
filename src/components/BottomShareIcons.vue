@@ -64,11 +64,11 @@ export default {
             this.$store.dispatch('submitQuery', data)
         },
         openDialer() {
-            const phoneNumber = 8826658501;
+            const phoneNumber = 918860012001;
             window.location.href = `tel:${phoneNumber}`;
         },
         openWhatsapp() {
-            window.open(`https://wa.me/${8826658501}?text=Hello...`, '_blank');
+            window.open(`https://wa.me/${918860012001}?text=Hello...`, '_blank');
         }
     }
 }

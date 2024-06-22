@@ -1,32 +1,43 @@
 <template>
     <div class="" style="padding-top: 70px;">
-        <div class="text-white py-5" style=" background-color:var(--bg-primary) ;padding-bottom: 6rem !important;">
+        <div class="text-white py-5" style=" background-color:var(--bg-primary) ;padding-bottom: 6rem !important;"
+            v-observe>
             <h1 class="text-center mb-0 fw-bold">Contact Page</h1>
             <p class="small mb-0 text-capitalize text-center">The secret of getting ahead, is getting started</p>
         </div>
-        <div class="container bg-white rounded-top-5" style="margin-top: -40px;">
+        <div class="container bg-white rounded-top-5" style="margin-top: -40px;" v-observe>
             <div class="row p-3">
                 <div class="col-12 col-md-6 pt-4 text-center">
-                    <form @submit.prevent="loginAccount()">
-                        <div class="p-2 form-floating">
-                            <input type="text" class="form-control" placeholder="First Name" v-model="mobile">
-                            <label for="floatingInput" class="ms-2 text-muted">First Name</label>
+                    <form @submit.prevent="submitQuery()" class="mt-4 row g-3 needs-validation" novalidate>
+                        <div class="w-100 form-floating mt-0">
+                            <input type="text" class="form-control" placeholder="" v-model="name" required>
+                            <label for="floatingInput" class="text-muted ms-2">Name</label>
                         </div>
-                        <div class="p-2 form-floating">
-                            <input type="email" class="form-control" placeholder="Business Name" v-model="email">
-                            <label for="floatingInput" class="ms-2 text-muted">Email Id</label>
-                        </div>
-                        <div class="p-2 form-floating">
-                            <input type="number" class="form-control" placeholder="Phone No." v-model="number">
-                            <label for="floatingInput" class="ms-2 text-muted">Phone No</label>
-                        </div>
-                        <div class="p-2 form-floating">
+                        <div class="w-100 form-floating mt-2">
+                            <input type="tel" class="form-control" placeholder="Mobile" v-model="number" required>
+                            <label class="ms-2 text-muted">Mobile No</label>
+                        </div> 
+                        <div class="w-100 form-floating mt-2">
                             <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea"
                                 v-model="note"></textarea>
-                            <label for="floatingTextarea" class="ms-2 text-muted">Notes</label>
+                            <label for="floatingTextarea" class="ms-2 text-muted">Describe your requirements</label>
                         </div>
-                        <button class="btn btn-danger text-capitalize">send message</button>
+
+                        <div class="form-check text-start ms-2">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"
+                                v-model="agree">
+                            <label class="form-check-label small" for="flexCheckDefault">
+                                I agree to the <router-link to="/agreement" class="text-dark text-capitalize">terms and
+                                    conditions</router-link> and
+                                <router-link to="/privacy-policy" class="text-dark text-capitalize">privacy
+                                    policy.</router-link>
+                            </label>
+                        </div>
+                        <div class="col-12">
+                            <button class="btn btn-danger py-2 fs-5 w-100 rounded-0 text-white" type="submit">Submit</button>
+                        </div>
                     </form>
+
                 </div>
                 <div class="col-12 col-md-6 mt-5 mt-md-0 pt-4 text-center">
                     <h1 class="text-uppercase my-3">We Believe</h1>
@@ -41,7 +52,7 @@
 
             </div>
         </div>
-        <div class="container-fluid mt-5 py-5 text-dark" style="background-color: var(--bg-forth)">
+        <div class="container-fluid mt-5 py-5 text-dark" style="background-color: var(--bg-forth)" v-observe>
             <div class="row">
                 <h1 class="text-uppercase mb-4 text-center">Need to get in touch with us?</h1>
                 <div class="col-12 col-md-6 d-flex align-items-center justify-content-center">
@@ -63,7 +74,7 @@
             </div>
 
         </div>
-        <div class="container my-5">
+        <div class="container my-5" v-observe>
             <h1 class="text-capitalize my-5 text-center">Follow us on</h1>
             <div class="row row-cols-4">
                 <div v-for="(contact, index) in folows" :key="index" class="col py-2">
@@ -80,7 +91,7 @@
             </div>
         </div>
         <div class="my-3">
-            <SocialSchedule />
+            <SocialSchedule v-observe />
         </div>
     </div>
 </template>
@@ -141,27 +152,37 @@ export default {
 </script>
 
 <style scoped>
-.so-relax {
-    position: relative;
-    text-align: center;
-    /* margin: 20px 0; */
+.cutout {
+  overflow: hidden;
+  text-align: center;
 }
 
-.so-relax::before,
-.so-relax::after {
-    content: "";
-    position: absolute;
-    top: 50%;
-    width: 30%;
-    height: 1px;
-    background: black;
+.cutout>span {
+  position: relative;
+  display: inline-block;
 }
 
-.so-relax::before {
-    left: 0;
+.cutout>span:before,
+.cutout>span:after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 900px;
+  /* Adjust width as needed */
+  margin: 0 20px;
 }
 
-.so-relax::after {
-    right: 0;
+.cutout>span:before {
+  right: 100%;
+  border-bottom: 2px solid;
+  border-color: red;
+  border-image-slice: 1;
+}
+
+.cutout>span:after {
+  left: 100%;
+  border-bottom: 2px solid;
+  border-color: red;
+  border-image-slice: 1;
 }
 </style>

@@ -1,6 +1,6 @@
 <template>
     <div class="container">
-        <h1 class="text-center py-5 text-capitalize">sales funnel</h1>
+        <h1 class="text-center mb-4 text-capitalize">sales funnel</h1>
         <div class="row m-0 gy-2 mb-4">
             <div class="col-12 col-md-6 align-self-center">
                 <img src="/img/mobilecontent.svg" style="max-width: 80%; width: 250px;" alt="">
