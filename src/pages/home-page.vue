@@ -2,6 +2,9 @@
   <div class="" style="padding-top:70px">
     <Banner brandColorOne="#125252" v-observe />
     <div class="my-5">
+      <VideoSection v-observe />
+    </div>
+    <div class="my-5">
       <ServicesLeadManagement :values="leads" title="Features, that boost your attention!" v-observe />
     </div>
     <div class="my-5">
@@ -52,6 +55,7 @@
 <script>
 import Banner from "@/components/BannerSection.vue";
 import ServicesLeadManagement from "@/components/services/LeadManagement.vue";
+import VideoSection from "@/components/VideoSection.vue";
 import OurService from "@/components/OurService.vue";
 import AutoScrolling from "@/components/services/AutoScrolling.vue";
 import BookDemo from "@/components/BookDemo.vue";
@@ -70,6 +74,7 @@ export default {
   components: {
     Banner,
     ServicesLeadManagement,
+    VideoSection,
     OurService,
     AutoScrolling,
     BookDemo,
