@@ -39,8 +39,5 @@ export default {
     background-color: white !important;
     box-shadow: none !important;
 }
-
-.accordion {
-    --bs-accordion-btn-focus-box-shadow: none !important;
-} 
+ 
 </style>

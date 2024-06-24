@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div style="padding-top: 70px;">
         <div class="container py-5">
             <div class="row">
                 <div class="col-12 col-md-6 text-center">
@@ -57,8 +57,8 @@
                 </div>
             </div>
         </div>
-        <p class="text-center py-4 text-white mb-0" style="background-color: var(--bg-primary);">Questions? Talk to an
-            expert: 886002001</p>
+        <p class="text-center py-4 text-white mb-0 position-fixed bottom-0 w-100" style="background-color: var(--bg-primary);">Questions? Talk to an
+            expert: 8860012001</p>
     </div>
 </template>
 <script>

@@ -1,6 +1,8 @@
 <template>
-  <TopNav v-if="!hide" />
-  <router-view />
+  <TopNav v-if="!hidden" />
+  <transition name="fade">
+    <router-view />
+  </transition>
   <FooterBar v-if="!hide" />
 </template>
 <script>
@@ -15,6 +17,10 @@ export default {
   computed: {
     hide() {
       const hiddenPages = ['DemoPage1', 'ThankYou', 'LoginPage', 'RegistrationPage', 'free-trial', 'demo-page', 'sales-demo-one', 'sales-demo-two']
+      return hiddenPages.includes(this.$route.name)
+    },
+    hidden() {
+      const hiddenPages = ['DemoPage1', 'ThankYou', 'LoginPage', 'RegistrationPage', 'sales-demo-one', 'sales-demo-two']
       return hiddenPages.includes(this.$route.name)
     },
   }
@@ -34,6 +40,21 @@ export default {
   --bg-secondary: #EB5E28;
   --bg-tertiary: #FEC007;
   --bg-forth: #FBF4F4;
+}
+
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+
+#scroll::-webkit-scrollbar {
+  display: none;
 }
 
 .smaller {
@@ -73,5 +94,13 @@ export default {
 .enter {
   opacity: 1;
   transform: translateY(0);
+}
+
+.accordion {
+  --bs-accordion-btn-focus-box-shadow: none !important;
+}
+
+.form-control {
+  box-shadow: none !important;
 }
 </style>

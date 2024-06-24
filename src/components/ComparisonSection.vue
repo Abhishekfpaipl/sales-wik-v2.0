@@ -7,7 +7,7 @@
                 <div class="col" v-for="(compare, index) in comparison" :key="index">
                     <div class="card" :style="{ backgroundColor: compare.color }">
                         <div
-                            class="card-body d-md-flex align-items-start justify-content-center text-center text-md-start">
+                            class="card-body d-md-flex align-items-start justify-content-start text-center text-md-start">
                             <!-- <h5 class="card-title">Card title</h5> -->
                             <i class="bi fs-3 pe-2" :class="compare.icon"></i>
                             <p class="card-text ms-2">{{ compare.text }}</p>

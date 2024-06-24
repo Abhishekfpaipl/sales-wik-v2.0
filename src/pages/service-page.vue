@@ -8,13 +8,19 @@
             <ServicesLeadManagement :values="leads" title="Features, that boost your attention!" v-observe />
         </div>
         <div class="my-5">
+            <OurService v-observe />
+        </div>
+        <div class="my-5">
+            <SalesFunnel v-observe />
+        </div>
+        <div class="my-5">
+            <WhyChooseUs :description="whychooseUs" title="why choose us" image="/img/whychooseUs.svg" v-observe />
+        </div>
+        <div class="my-5">
             <AutoScrolling v-observe />
         </div>
         <div class="my-5">
             <TempCustomers :reviews="customers" title="our customers" v-observe />
-        </div>
-        <div class="my-5">
-            <ServicesFaqSection :questions="faqs" v-observe />
         </div>
         <div class="my-5">
             <ServicesSalesCounter :service="service" :serviceCount="2000" :category="category" :categoryCount="1500"
@@ -31,19 +37,23 @@
 <script>
 import ServicesFormBanner from "@/components/services/FormBanner.vue";
 import ServicesLeadManagement from "@/components/services/LeadManagement.vue";
+import WhyChooseUs from "@/components/WhyChooseUs.vue";
 import AutoScrolling from "@/components/services/AutoScrolling.vue";
 import TempCustomers from "@/components/TempCustomers.vue";
-import ServicesFaqSection from "@/components/services/FaqSection.vue";
 import ServicesSalesCounter from "@/components/services/SalesCounter.vue";
+import SalesFunnel from "@/components/SalesFunnel.vue";
+import OurService from "@/components/OurService.vue";
 
 export default {
     name: "ServicePage",
     components: {
         ServicesFormBanner,
         ServicesLeadManagement,
+        SalesFunnel,
+        OurService,
+        WhyChooseUs,
         AutoScrolling,
         TempCustomers,
-        ServicesFaqSection,
         ServicesSalesCounter,
     },
     data() {
@@ -330,7 +340,41 @@ export default {
                     rating: '5',
                     text: "Saleswik has helped us to decentralize information. Now all the team has access to the documents and sales information. We no longer have the problem that some documents is stored on the PC of a teammate who is not accessible at the time."
                 },
-            ]
+            ],
+            whychooseUs: [
+                {
+                    title: 'Ensure Zero Lead Leakage',
+                    icon: 'bi-headset'
+                },
+                {
+                    title: 'No Missing Follow - ups',
+                    icon: 'bi-thumbs-up'
+                },
+                {
+                    title: "Increase 80 % Additional Sales",
+                    icon: 'bi-currency-ruppee'
+                },
+                {
+                    title: "Cost effective",
+                    icon: 'bi-journal'
+                },
+                {
+                    title: "Secured Plateform",
+                    icon: 'bi-stars'
+                },
+                {
+                    title: "Free support",
+                    icon: 'bi-stars'
+                },
+                {
+                    title: "Modern Interface",
+                    icon: 'bi-stars'
+                },
+                {
+                    title: "Easy Setup & Fast Adoption",
+                    icon: 'bi-stars'
+                },
+            ],
         }
     },
     mounted() {

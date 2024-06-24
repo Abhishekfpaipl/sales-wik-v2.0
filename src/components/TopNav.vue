@@ -12,14 +12,14 @@
                 </router-link>
             </div>
         </div>
-        <!-- <div class="flex-fill d-none d-md-flex gap-3 justify-content-end me-3">
-            <router-link :to="link.link" class="text-decoration-none text-dark" v-for="(link, index) in brandLinks"
-                :key="index">{{ link.name }}</router-link>
-        </div>  -->
-        <router-link to="/free-trial"
-            class="text-decoration-none btn btn-danger rounded p-2 border px-2 ms-2">
-            <span class="text-capitalize">Try free</span>
-        </router-link>
+        <div class="">
+            <router-link v-if="showOnDemo && !showOnFree" to="/free-trial" class="text-decoration-none btn btn-danger rounded p-2 border px-2 ms-2">
+                <span class="text-capitalize">Try free</span>
+            </router-link>
+            <router-link v-if="showOnFree && !showOnDemo" to="/demo" class="text-decoration-none btn btn-danger rounded p-2 border px-2 ms-2">
+                <span class="text-capitalize">Demo</span>
+            </router-link>
+        </div>
     </div>
 </template>
 
@@ -33,6 +33,16 @@ export default {
             brandLogo: '/img/logo.svg',
             brandColorOne: '#125252',
         }
+    },
+    computed: {
+        showOnFree() {
+            const hiddenPages = [ 'free-trial']
+            return hiddenPages.includes(this.$route.name)
+        },
+        showOnDemo() {
+            const hiddenPages = [ 'demo-page']
+            return hiddenPages.includes(this.$route.name)
+        },
     },
     methods: {
         closeOffcanvas() {

@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div style="padding-top: 70px;">
         <div class="container py-4">
             <div class="row">
                 <div class="col-12 col-md-6 py-3 text-center px-4 px-md-2">
@@ -58,8 +58,8 @@
                 </div>
             </div>
         </div>
-        <p class="text-center py-4 text-white mb-0" style="background-color: var(--bg-primary);">Questions? Talk to an
-            expert: 886002001</p>
+        <p class="text-center py-4 text-white mb-0 position-fixed bottom-0 w-100" style="background-color: var(--bg-primary);">Questions? Talk to an
+            expert: 8860012001</p>
     </div>
 </template>
 <script>
@@ -71,26 +71,7 @@ export default {
                 "Pre-configured processes and reports.",
                 "Guided experiences for sales persons.",
                 "Online training and live webinars"
-            ],
-            // jobs: [
-            //     "Sales Manager",
-            //     "Marketing / PR Manager",
-            //     "Customer Service Manager",
-            //     "CXO / VR / General Manager",
-            //     "IT Manager",
-            //     "Operations Manager",
-            //     "Developer Software Engineer",
-            //     "Student / Job Seeker / Personal Interest",
-            //     "Others"
-            // ],
-            // employees: [
-            //     "1-25 employees",
-            //     "26-100 employees",
-            //     "101-200 employees",
-            //     "201-500 employees",
-            //     "501-2000 employees",
-            //     "2001+ employees",
-            // ],
+            ], 
             countries: [
                 { value: "US", label: "United States" },
                 { value: "AF", label: "Afghanistan" },

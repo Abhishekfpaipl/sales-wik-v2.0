@@ -4,7 +4,7 @@
             <h1 class="text-center mb-4">Frequently Asked Questions</h1>
         </div>
         <div class="container py-5 rounded-top-5 bg-white" style="margin-top: -40px;">
-            <div class="row row-cols-1 row-cols-md-2 align-items-center">
+            <!-- <div class="row row-cols-1 row-cols-md-2 align-items-center">
                 <div class="col" v-for="(faq, index) in faqs" :key="index">
                     <div class="accordion accordion-flush" id="accordionFlushExample">
                         <div class="accordion-item my-2 border-0">
@@ -22,13 +22,18 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> -->
+            <FaqSection/> 
         </div>
-        <ServicesFormBanner />
     </div>
 </template>
 <script>
+import FaqSection from '@/components/FaqSection.vue';
 export default {
+    name: 'FaqPage',
+    components: {
+        FaqSection,
+    },
     data() {
         return {
             faqs: [

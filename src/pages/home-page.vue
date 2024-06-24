@@ -10,7 +10,7 @@
     <div class="my-5">
       <AutoScrolling v-observe />
     </div>
-    <div class="my-5">
+    <div class="my-5" id="second">
       <PriceSection v-observe />
     </div>
     <div class="my-5">

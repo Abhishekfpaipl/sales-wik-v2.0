@@ -13,15 +13,15 @@
                         </div>
                         <h3 class="mt-3">Streamline Your Lead Management.</h3>
                         <small class="">Convert curious prospects into loyal customers</small>
-                        <div class="mt-5 text-center text-md-start">
-                            <p class="my-1">Capture leads from multiple sources.</p>
-                            <p class="my-1">Properly nurture each lead.</p>
-                            <p class="my-1">Maximize lead conversion.</p>
-                            <p class="my-1">Boost sales and productivity.</p>
+                        <div class="mt-3 text-center text-md-start">
+                            <p class="my-1"><i class="bi bi-check2-square me-2"></i> Capture leads from multiple sources.</p>
+                            <p class="my-1"><i class="bi bi-check2-square me-2"></i> Properly nurture each lead.</p>
+                            <p class="my-1"><i class="bi bi-check2-square me-2"></i> Maximize lead conversion.</p>
+                            <p class="my-1"><i class="bi bi-check2-square me-2"></i> Boost sales and productivity.</p>
                         </div> 
-                        <RouterLink to="/">
-                            <div class="btn my-4 fs-5 fw-bold text-white btn-danger" >
-                                Get Started 
+                        <RouterLink to="/free-trial">
+                            <div class="btn my-4 fs-5 fw-bold text-white btn-danger text-capitalize">
+                                Start your free trial
                             </div>
                         </RouterLink>
                         <a href="#second"><i class="bi bi-chevron-down fs-1" style="color:var(--bg-tertiary)"></i></a> 

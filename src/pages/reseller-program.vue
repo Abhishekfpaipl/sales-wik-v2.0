@@ -1,13 +1,13 @@
 <template>
     <div style="padding-top: 70px;">
         <div class="text-center fw-bold py-5 text-white" style="background-color: var(--bg-primary);">
-            <p class="fs-1 mb-0 text-capitalize">Re-seller program</p>
+            <p class="fs-1 mb-0 text-capitalize">Patnership with us</p>
             <p class="fs-5 text-capitalize">it's your own business , let it shine</p>
         </div>
         <div class="container py-5 rounded-top-5 bg-white" style="margin-top: -40px;" v-observe>
             <div class="row">
                 <div class="col-12 col-md-6 d-flex justify-content-center align-items-center">
-                    <img src="/img/reseller-program.svg" style="width: 250px; max-width: 80%" alt="">
+                    <img src="/img/partnership.svg" style="width: 350px; max-width: 80%" alt="">
                 </div>
                 <div class="col-12 col-md-6 text-center mt-4 mt-md-0">
                     <form @submit.prevent="submitQuery()">
@@ -51,10 +51,7 @@
                 </div>
             </div>
         </div>
-
-
-
-
+ 
         <div class="container my-5">
             <h3 class="text-center ">Our Core Values</h3>
             <p class="text-center container">
@@ -103,13 +100,15 @@
                 </div>
             </div>
         </div>
-        <div class="text-white py-5" style="background-color: var(--bg-primary);">
-            <h3 class="text-center ">It's like we are visible</h3>
-            <p class="text-center container">
-                All reseller plans have pre-built and customizable ecommerce storefronts with your name baked right in.
-                You'll even get your name on nearly all our products. Your customers will have no idea we're even
-                involved.
-            </p>
+        <div class="container-fluid text-white py-5" style="background-color: var(--bg-primary);">
+            <div class="row">
+                <div class="col-12 col-md-6">
+                    <img src="/img/reseller-program.svg" style="width: 250px;max-width: 80%;" alt="">
+                </div>
+                <div class="col-12 col-md-6 mt-5 mt-md-0 d-flex justify-content-center align-items-center">
+                    <p class="fs-1 fw-bold">"It's your own business <br> Let it shine"</p>
+                </div>
+            </div>
         </div>
 
     </div>
@@ -170,10 +169,10 @@ export default {
                     heading: 'bulks subscriptions'
                 },
             ],
-            mobile: '',
-            email: '',
-            number: '',
+            mobile: '', 
+            name: '',
             note: '',
+            designation:'',
             questions: [
                 {
                     id: 1,
@@ -234,7 +233,7 @@ export default {
         }
     },
     methods: {
-        loginAccount() {
+        submitQuery() {
             console.log(this.mobile, this.email, this.number, this.note)
         }
     }

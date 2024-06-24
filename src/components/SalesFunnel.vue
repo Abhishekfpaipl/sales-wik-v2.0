@@ -10,7 +10,7 @@
                             <p class="ms-2 mb-0 fw-bold">{{ lead.title }}</p>
                         </div>
                         <div class="content">
-                            <p>{{ lead.description }}</p>
+                            <p class="mb-0">{{ lead.description }}</p>
                         </div>
                     </div>
                 </div>
@@ -21,7 +21,7 @@
 
 <script>
 export default {
-    name: "LeadManagement",
+    name: "SalesFunnel",
     data() {
         return {
             values: [

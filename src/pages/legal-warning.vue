@@ -5,7 +5,7 @@
         </div>
         <div class="container py-5 rounded-top-5 bg-white" style="margin-top: -40px;">
             <div class="card border-0"> 
-                <div class="card-body">
+                <div class="card-body text-start">
                     <p><strong>Please read this legal warning ("Disclaimer") carefully before using our Lead
                             Management Software ("Software").</strong></p>
 

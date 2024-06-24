@@ -71,7 +71,7 @@ export default {
                 },
                 {
                     id: 3,
-                    name: 'Resellership',
+                    name: 'Patnership',
                     link: '/reseller-program'
                 },
                 {
@@ -83,7 +83,7 @@ export default {
             links: [
                 {
                     id: 13,
-                    name: 'LegalWarning',
+                    name: 'Legal',
                     link: '/legal-warning'
                 },
                 {
